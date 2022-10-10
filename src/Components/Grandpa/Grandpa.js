@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import Aunty from '../Aunty/Aunty';
 import Father from '../Father/Father';
 import Uncal from '../Uncal/Uncal';
-import './Grandpa.css'
-const Grandpa = () => {
+import './Grandpa.css';
 
-     const house = 7;
+ export const RingContext = createContext('Matir Ring')
+ export const MonyContext = createContext(555)
+
+const Grandpa = () => {
+     const [house, setHouse] = useState(1);
+     const [mony, setMony] = useState(555)
      return (
+          <RingContext.Provider value= {[house, setHouse]}>
+          <MonyContext.Provider value={[mony, setMony]}>
           <div className='grandpa'>
                <h4>Grandpa</h4>
              <section className='flex'>
-             <Father house={house}></Father>
-             <Uncal house={house}></Uncal>
-             <Aunty house={house}></Aunty>
+             <Father></Father>
+             <Uncal></Uncal>
+             <Aunty></Aunty>
              </section>
           </div>
+          </MonyContext.Provider>
+          </RingContext.Provider>
      );
 };
 

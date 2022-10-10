@@ -1,8 +1,13 @@
 import React from 'react'
 
-function Brother() {
+function Brother({house}) {
   return (
-    <div>Brother</div>
+    <div>
+     <h4>brother</h4>
+     <section>
+          <p><small>House: {house}</small></p>
+     </section>
+    </div>
   )
 }
 

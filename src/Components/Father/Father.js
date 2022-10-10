@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Brother from '../Brother/Brother'
+import { RingContext } from '../Grandpa/Grandpa'
 import Myself from '../Myself/Myself'
 import Sistar from '../Sistar/Sistar'
 
-function Father({house}) {
+function Father() {
+  const [house, setHouse] = useContext(RingContext)
   return (
     <div>
           <h4>Father</h4>
-          <p><small>House: {house}</small></p>
+          <p><small>ring: {house}</small></p>
+          <button onClick={()=> setHouse(house + 1)}>Incrise</button>
      <section className='flex'>
-     <Myself house={house}></Myself>
-     <Brother house={house}></Brother>
-     <Sistar house={house}></Sistar>
+     <Myself ring={house}></Myself>
+     <Brother ring={house}></Brother>
+     <Sistar ring={house}></Sistar>
      </section>
     </div>
   )

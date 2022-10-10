@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { RingContext } from '../Grandpa/Grandpa'
 
-function Myself({house}) {
+function Myself() {
+  const ring = useContext(RingContext)
   return (
     <div>
     <h4>Myself</h4> 
-     <p><small>House: {house}</small></p>
+     <p><small>Ring: {ring}</small></p>
     </div>
     
   )
